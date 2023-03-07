@@ -6,7 +6,7 @@ class Solution {
         int cnt=0, i=1;
         while(cnt<k)
         {
-            // if(i != arr[i-1])
+            // if(i != arr[i-1]) time limit exceeded on doing this way
             if(!lpos.contains(i))
             {
                 cnt++;

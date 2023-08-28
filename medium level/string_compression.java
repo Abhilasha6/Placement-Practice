@@ -2,7 +2,7 @@ class Solution {
     public int compress(char[] chars) {
         String s="";       
         if(chars.length==1) return 1;
-        
+
         //TLE
         // HashMap<Character, Integer> hm=new HashMap<>();
         // for(int i=0;i<chars.length;i++)
@@ -26,20 +26,41 @@ class Solution {
         //     s+=entry.getKey()+""+entry.getValue();
         // }
         
-        int count=0; int j=0;
-        for(int i=0;i<chars.length;i++)
-        {
-            if(i+1<chars.length && chars[i]==chars[i+1])
-            {
-                count++;
-            }
-            else{
-                chars[j++]=chars[i];
-                s+=count;
-                chars[j++]=s.charAt(0);
-                count=0;
-            }
+        // int count=0; int j=0;
+        // for(int i=0;i<chars.length;i++)
+        // {
+        //     if(i+1<chars.length && chars[i]==chars[i+1])
+        //     {
+        //         count++;
+        //     }
+        //     else{
+        //         chars[j++]=chars[i];
+        //         s+=count;
+        //         chars[j++]=s.charAt(0);
+        //         count=0;
+        //     }
+        // }
+        // return chars.length;
+
+
+        
+    int ans = 0; 
+    for (int i = 0; i < chars.length;) {
+      final char letter = chars[i];
+      int count = 0;
+
+      while (i < chars.length && chars[i] == letter) {
+        ++count;
+        ++i;
+      }
+
+      chars[ans++] = letter;
+      if (count > 1) {
+        for (final char c : String.valueOf(count).toCharArray()) {
+          chars[ans++] = c;
         }
-        return chars.length;
+      }
+    }
+    return ans;
     }
 }

@@ -10,6 +10,10 @@ class Solution {
             else
                 cd++;
         }
+
+        // extremely simple logic, whose count is more tat party wins, works for max
+        // test cases but fails for some so weconsider other methods
+
         // if(cr==cd)
         // {
         // return senate.charAt(0)=='R'?"Radiant":"Dire";
@@ -19,6 +23,7 @@ class Solution {
 
         // return "Dire";
 
+        // using stack
         Stack<Character> st = new Stack<>();
         i = 0;
         while (true) {
@@ -51,6 +56,8 @@ class Solution {
         // if(st.peek()==ch)
         // st.push(ch);
         // }
+
+        // another approach using queue
 
         // Queue<Integer> r=new LinkedList<>();
         // Queue<Integer> d=new LinkedList<>();

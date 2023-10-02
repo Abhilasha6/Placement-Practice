@@ -18,5 +18,14 @@ class Solution {
         // }
         // return Math.max(sume, sumo);
 
+        // here we check that: if we rob current house, will the sum be max or not
+        // if yes then rob this home else skip this house and go for next house
+        int sum = 0, max = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int currsum = max + nums[i];
+            max = Math.max(max, sum);
+            sum = currsum;
+        }
+        return Math.max(sum, max);
     }
 }

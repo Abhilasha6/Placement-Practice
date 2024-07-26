@@ -1,3 +1,3 @@
 # Placement-Practice
-This repo has some questions that I am practicing to ace on campus placement drive.
+This repo has leetcode questions that I am practicing to ace on campus placement drive.
 --------------
